@@ -1,0 +1,21 @@
+spring:
+  datasource:
+    url: jdbc:sqlserver://localhost:1433;databaseName=greencodedb;integratedSecurity=false;encrypt=false;trustServerCerticate=true
+    username: sa
+    password: '@ITB123456'
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+  jpa:
+    database-platform: org.hibernate.dialect.SQLServerDialect
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate:
+        show_sql: true
+
+application:
+  security:
+    jwt:
+      secret-key: +0RDixKQMjuf36BQrojZgbafxfH/pHNgcKvVJVIMvzeFDvH/1GwOG5EOebLRGs4j
+      expiration: 86400000 # 1 dia
+      refresh-token:
+        expiration: 604800000 # 7 dias
